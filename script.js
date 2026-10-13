@@ -46,6 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             id: 5,
+            title: "Data Frame Summary",
+            category: "r · stats",
+            language: "r",
+            description: "Compute summary statistics grouped by a categorical variable.",
+            code: "library(dplyr)\n\nsummary_stats <- mtcars %>%\n    group_by(cyl) %>%\n    summarise(\n        mean_mpg = mean(mpg),\n        n = n()\n)\n\nprint(summary_stats)",
+            updated: "Oct 7",
+            timestamp: 1696650000000,
+            favourite: true
+        },
+        {
+            id: 6,
             title: "Remove Duplicates",
             category: "javascript · utility",
             language: "javascript",
@@ -56,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             favourite: false
         },
         {
-            id: 6,
+            id: 7,
             title: "Clear Terminal",
             category: "terminal · devops",
             language: "other",
@@ -89,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const countHtml = document.getElementById("count-html");
     const countCss = document.getElementById("count-css");
     const countPython = document.getElementById("count-python");
+    const countR = document.getElementById("count-r");
     const countOther = document.getElementById("count-other");
 
     const statTotal = document.getElementById("stat-total");
@@ -111,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const htmlCount = snippets.filter(s => s.language === "html").length;
         const cssCount = snippets.filter(s => s.language === "css").length;
         const pyCount = snippets.filter(s => s.language === "python").length;
+        const rCount = snippets.filter(s => s.language === "r").length;
         const otherCount = snippets.filter(s => s.language === "other").length;
 
         if (countAll) countAll.textContent = total;
@@ -120,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (countHtml) countHtml.textContent = htmlCount;
         if (countCss) countCss.textContent = cssCount;
         if (countPython) countPython.textContent = pyCount;
+        if (countR) countR.textContent = rCount;
         if (countOther) countOther.textContent = otherCount;
 
         if (statTotal) statTotal.textContent = total;
@@ -185,6 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
             } else if (snippet.language === "python") {
                 langClass = "python-icon";
                 langText = "PY";
+            } else if (snippet.language === "r") {
+                langClass = "r-icon";
+                langText = "R";
             } else if (snippet.language === "other") {
                 langClass = "terminal-icon";
                 langText = "CLI";
@@ -453,11 +470,11 @@ Re-write the following code snippet in a more efficient and optimized way:
         btn.addEventListener("click", () => {
             const title = prompt("Snippet Title:");
             if (!title) return;
-            const language = prompt("Language (javascript, html, css, python, other):", "javascript").toLowerCase();
+            const language = prompt("Language (javascript, html, css, python, r, other):", "javascript").toLowerCase();
             const description = prompt("Description:");
             const code = prompt("Code content:");
 
-            const validLang = ["javascript", "html", "css", "python", "other"].includes(language) ? language : "other";
+            const validLang = ["javascript", "html", "css", "python", "r", "other"].includes(language) ? language : "other";
 
             const newSnippet = {
                 id: Date.now(),
