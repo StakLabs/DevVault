@@ -42,10 +42,7 @@ These capabilities can be introduced progressively as the platform develops.
 
 ## 🚀 Getting Started
 
-1. Clone or download this repository.
-2. Open the project folder.
-3. Open `index.html` in your browser, or use a local development server.
-4. Start creating and managing your snippets.
+Go to https://staklabs.github.io/DevVault
 
 **Note:** AI functionality requires the appropriate backend and API configuration. Keep API keys on the server rather than exposing them in client-side JavaScript.
 
