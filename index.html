@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070d18">
+    <title>DevVault | Developer Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="prism.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="app">
+        <header class="topbar">
+            <a href="#" class="brand">
+                <span class="brand-icon">&lt;/&gt;</span>
+                <span>Dev<span class="green">Vault</span><small>Save. Organise. Build.</small></span>
+            </a>
+
+            <label class="search">
+                <span>⌕</span>
+                <input type="search" id="search-input" placeholder="Search your snippets..." aria-label="Search snippets">
+                <kbd>Ctrl K</kbd>
+            </label>
+
+            <div class="profile">
+                <span class="avatar">?</span>
+            </div>
+        </header>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <p class="side-label">WORKSPACE</p>
+
+                <a href="#" class="nav-item active" data-view="overview"><span>⌂</span> Overview</a>
+                <a href="#snippets" class="nav-item" data-view="snippets"><span>‹/›</span> All snippets <b id="count-all">0</b></a>
+                <a href="#favourites" class="nav-item" data-view="favourites"><span>☆</span> Favourites <b id="count-fav">0</b></a>
+                <a href="#recent" class="nav-item" data-view="recent"><span>◷</span> Recently added <b id="count-recent">0</b></a>
+
+                <p class="side-label">LANGUAGES</p>
+
+                <a href="#javascript" class="nav-item language" data-language="javascript"><i class="dot js"></i> JavaScript <b id="count-js">0</b></a>
+                <a href="#html" class="nav-item language" data-language="html"><i class="dot html"></i> HTML <b id="count-html">0</b></a>
+                <a href="#css" class="nav-item language" data-language="css"><i class="dot css"></i> CSS <b id="count-css">0</b></a>
+                <a href="#python" class="nav-item language" data-language="python"><i class="dot python"></i> Python <b id="count-python">0</b></a>
+                <a href="#other" class="nav-item language" data-language="other"><i class="dot other"></i> Other <b id="count-other">0</b></a>
+
+                <div class="sidebar-bottom">
+                    <div class="storage-card">
+                        <span class="storage-icon">◇</span>
+                        <strong>Your local vault</strong>
+                        <p>Your code collection, organised in one place.</p>
+                        <div class="storage-track"><span></span></div>
+                        <small>Offline-ready workspace</small>
+                    </div>
+
+                    <button class="button outline new-snippet">＋ New snippet</button>
+                </div>
+            </aside>
+
+            <main class="main">
+                <section class="welcome">
+                    <div>
+                        <p class="eyebrow">YOUR DEVELOPER WORKSPACE</p>
+                        <h1>Welcome back, <span>StakLabs.</span></h1>
+                        <p class="subtitle">Your best code deserves a home.</p>
+                    </div>
+                    <button class="button primary new-snippet">＋ Create snippet</button>
+                </section>
+
+                <section class="stats">
+                    <article class="stat">
+                        <div class="stat-top"><span>Total snippets</span><span class="stat-icon green-bg">▤</span></div>
+                        <strong id="stat-total">0</strong>
+                        <p><span class="green">↑ <span id="stat-added-week">3</span></span> added this week</p>
+                    </article>
+
+                    <article class="stat">
+                        <div class="stat-top"><span>Favourites</span><span class="stat-icon yellow-bg">★</span></div>
+                        <strong id="stat-favourites">0</strong>
+                        <p>Your most-used snippets</p>
+                    </article>
+
+                    <article class="stat">
+                        <div class="stat-top"><span>Languages</span><span class="stat-icon purple-bg">&lt;/&gt;</span></div>
+                        <strong id="stat-languages">5</strong>
+                        <p>One organised workspace</p>
+                    </article>
+                </section>
+
+                <section class="snippet-section" id="snippets">
+                    <div class="section-heading">
+                        <div>
+                            <h2 id="section-title">Your snippets</h2>
+                            <p class="subtitle">Reusable code. Zero digging through old projects.</p>
+                        </div>
+
+                        <select aria-label="Sort snippets">
+                            <option>Recently added</option>
+                            <option>Name A–Z</option>
+                            <option>Language</option>
+                        </select>
+                    </div>
+
+                    <div class="filters">
+                        <button class="filter active" data-filter="all">All snippets <span id="filter-count-all">0</span></button>
+                        <button class="filter" data-filter="javascript">JavaScript</button>
+                        <button class="filter" data-filter="html">HTML</button>
+                        <button class="filter" data-filter="css">CSS</button>
+                        <button class="filter" data-filter="python">Python</button>
+                        <button class="filter" data-filter="other">Other</button>
+                    </div>
+
+                    <div class="snippet-grid"></div>
+                </section>
+
+                <footer class="footer">
+                    <span><i></i> Your workspace is ready</span>
+                    <span>DevVault v0.1.0 · Built for builders</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="prism.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
