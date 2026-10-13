@@ -281,6 +281,10 @@ kbd {
     background: #a477ff;
 }
 
+.dot.r {
+    background: #4387d8;
+}
+
 .dot.other {
     background: #8fa6c4;
 }
@@ -597,6 +601,10 @@ h1 span {
 
 .python-icon {
     background: #a77bff;
+}
+
+.r-icon {
+    background: #4387d8;
 }
 
 .terminal-icon {
@@ -919,4 +927,3 @@ pre .comment {
         flex-direction: column;
     }
 }
-```
